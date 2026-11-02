@@ -2497,5 +2497,13 @@
   "jbl.connect_nearby": "Conectar",
   "jbl.retry_audio": "Reintentar audio",
   "jbl.notice_connected": "Conectado al %s de %s",
-  "jbl.notice_nearby": "%s cercano · %s"
+  "jbl.notice_nearby": "%s cercano · %s",
+  "tv.load_retry": "No se pudo crear la TV. La conexión se mantiene; puedes reintentar.",
+  "tv.place_failed": "No se pudo colocar la TV. Revisa el modelo o elige otro.",
+  "tv.loading_model": "Cargando el modelo de TV…",
+  "tv.retry_model": "Reintentar TV",
+  "tv.route_failed": "No se pudo establecer la conexión multimedia. Se reintentará conservando la sesión.",
+  "tv.auto_compatibility": "Compatibilidad automática si falla la conexión",
+  "tv.compatibility_hint": "Si no llega imagen o sonido, intenta reproducir la pista localmente. No sustituye la transmisión de la tablet.",
+  "tv.compatibility_active": "Reproducción compatible activa para esta sesión."
 }

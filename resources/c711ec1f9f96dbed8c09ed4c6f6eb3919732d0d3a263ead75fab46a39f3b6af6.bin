@@ -1,10 +1,11 @@
 <!doctype html><html><head><meta charset="utf-8"><meta name="referrer" content="no-referrer"><title>Efeh TV</title></head><body><script>
 'use strict';
 // Hidden transport endpoint. Never requests a camera, microphone or desktop.
-const token=location.hash.slice(1), peers=new Map(), pending=new Set();
+const token=location.hash.slice(1), peers=new Map(), pending=new Set(), retries=new Map();
 let state={},session='',stopped=false,helloAt=0,helloInterval=3000,frameId=0,mediaSerial=0,lastStatus=-1;
 const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 // Two bounded slots in one shared buffer; acknowledgements prevent overwrite.
+let rxSharedDisabled=false;
 let rxBuffer=null,rxSlots=[null,null],rxSerial=0,rxInitAt=0,rxStatsAt=0,rxSharedFrames=0,rxHttpFrames=0,rxTimeouts=0,rxBusyDrops=0,rxVideoStats={};
 const nativeHost=globalThis.chrome?.webview;
 if(nativeHost){
@@ -13,15 +14,19 @@ if(nativeHost){
 }
 function requestShared(){if(!nativeHost||rxBuffer||rxSlots.some(Boolean)||performance.now()<rxInitAt||!state.receiveName||!state.receiveKey)return;rxInitAt=performance.now()+1000;try{nativeHost.postMessage({type:'efeh-frame-init',name:state.receiveName});}catch{}}
 async function sharedFrame(frame,p,key,w,h,mode,cookie){
- if(!rxBuffer||rxBuffer.length<w*h*4)return false;const slot=rxSlots.findIndex(p=>!p);if(slot<0){rxBusyDrops++;return true;}
+ if(rxSharedDisabled||!rxBuffer||rxBuffer.length<w*h*4)return false;const slot=rxSlots.findIndex(p=>!p);if(slot<0){rxBusyDrops++;return true;}
  const serial=(++rxSerial)>>>0,pending={serial,sent:false};rxSlots[slot]=pending;
  try{const offset=slot*1280*720*4;await frame.copyTo(rxBuffer.subarray(offset,offset+w*h*4),{format:'BGRA',layout:[{offset:0,stride:w*4}]});
   if(!live(p)||key!==state.session+'/'+state.mode+'/'+state.videoId||cookie!==state.receiveKey)return true;
   pending.sent=true;nativeHost.postMessage({type:'efeh-frame',serial,slot,width:w,height:h,mode,cookie});
-  pending.timer=setTimeout(()=>{if(rxSlots[slot]===pending)rxTimeouts++;},150);return true;
+  pending.timer=setTimeout(()=>{if(rxSlots[slot]===pending){rxTimeouts++;rxSharedDisabled=true;}},150);return true;
  }finally{if(!pending.sent&&rxSlots[slot]===pending)rxSlots[slot]=null;}
 }
-async function call(path,body){const r=await fetch(path,{method:body===undefined?'GET':'POST',headers:{Authorization:'Bearer '+token},body,cache:'no-store'});if(!r.ok&&r.status!==204)throw Error('bridge');return r;}
+async function call(path,body){
+ const abort=typeof AbortController==='function'?new AbortController():null;
+ const timer=abort?setTimeout(()=>abort.abort(),10000):null;
+ try{const r=await fetch(path,{method:body===undefined?'GET':'POST',headers:{Authorization:'Bearer '+token},body,cache:'no-store',signal:abort?.signal});if(!r.ok&&r.status!==204)throw Error('bridge');return r;}finally{if(timer!==null)clearTimeout(timer);}
+}
 // Direct audio is bounded float PCM, encrypted by the peer data channel.
 // Only the owner's downloaded source is decoded, in the external helper.
 let audioContext=null,audioStatsAt=0,audioSerial=0;
@@ -29,7 +34,7 @@ function audioEngine(){if(!audioContext)audioContext=new AudioContext({sampleRat
 function clearAudio(){for(const p of peers.values())resetAudio(p);}
 function resetAudio(p){if(p.audioSources)for(const source of p.audioSources)try{source.stop();}catch{}p.audioSources=new Set();p.audioAt=0;}
 
-function audioVolume(p){if(!p.audioGain)return;const enabled=live(p)&&state.active&&!state.host&&state.audio&&state.video!==false;
+function audioVolume(p){if(!p.audioGain)return;if(state.active&&state.audio&&state.playing&&audioContext.state==='suspended'&&performance.now()>(p.audioResumeAt||0)){p.audioResumeAt=performance.now()+5000;audioContext.resume().catch(()=>{});}const enabled=live(p)&&state.active&&!state.host&&state.audio&&state.video!==false;
  p.audioGain.gain.setTargetAtTime(enabled?Math.max(0,Math.min(1,Number(state.gain)||0)):0,audioContext.currentTime,.025);
  p.audioPan.pan.setTargetAtTime(Math.max(-1,Math.min(1,Number(state.pan)||0)),audioContext.currentTime,.025);
  if(!enabled)resetAudio(p);
@@ -62,23 +67,24 @@ async function audioFrames(){let next=0;while(!stopped){
 }}
 async function signal(to,type,sdp=''){await call('/signal',JSON.stringify({to,type,sdp}));}
 function close(id,expected){const p=peers.get(id);if(expected&&p!==expected)return;
- if(p){p.closed=true;clearTimeout(p.deadline);clearTimeout(p.reconnectTimer);clearTimeout(p.rtpTimer);if(p.rtpReader)p.rtpReader.cancel().catch(()=>{});for(const element of [p.rtpVideo,p.rtpAudio])if(element){element.pause();element.srcObject=null;element.remove();}if(p.rtpSource)p.rtpSource.disconnect();if(p.rtpAnalyser)p.rtpAnalyser.disconnect();if(p.rtpInput)p.rtpInput.disconnect();peers.delete(id);pending.delete(id);if(!state.host){helloAt=performance.now()+1000;helloInterval=3000;}p.pc.close();resetAudio(p);if(p.audioGain)p.audioGain.disconnect();if(p.audioPan)p.audioPan.disconnect();}else pending.delete(id);}
+ if(p){p.closed=true;clearTimeout(p.deadline);clearTimeout(p.reconnectTimer);clearTimeout(p.rtpTimer);if(p.rtpReader)p.rtpReader.cancel().catch(()=>{});for(const element of [p.rtpVideo,p.rtpAudio])if(element){element.pause();element.srcObject=null;element.remove();}if(p.rtpSource)p.rtpSource.disconnect();if(p.rtpAnalyser)p.rtpAnalyser.disconnect();if(p.rtpInput)p.rtpInput.disconnect();peers.delete(id);pending.delete(id);if(!state.host&&state.active&&!stopped){const attempt=Math.min(5,(retries.get(id)||0)+1);if(retries.size<4||retries.has(id))retries.set(id,attempt);helloAt=performance.now()+Math.min(30000,3000*2**(attempt-1));helloInterval=6000;}p.pc.close();resetAudio(p);if(p.audioGain)p.audioGain.disconnect();if(p.audioPan)p.audioPan.disconnect();}else pending.delete(id);}
 function live(p){return p&&!p.closed&&peers.get(p.id)===p&&p.session===session;}
 function adopt(next){const key=next.active?next.session+'/'+next.host+'/'+next.owner+'/'+!!next.nativeHost:'';
- if(key!==session){clear();session=key;}state=next;}
-function clear(){clearAudio();for(const id of [...peers.keys()])close(id);pending.clear();lastStatus=-1;helloAt=0;helloInterval=3000;}
+ if(key!==session){clear();session=key;if(!rxSlots.some(Boolean))rxSharedDisabled=false;}state=next;}
+function clear(){clearAudio();for(const id of [...peers.keys()])close(id);pending.clear();retries.clear();lastStatus=-1;helloAt=0;helloInterval=3000;}
 function reportTransport(p){
  if(state.host||!live(p)||!p.dc||p.dc.readyState!=='open')return;
  const video=state.video!==false;if(p.prefAck===video||performance.now()<(p.prefAt||0))return;
  p.prefAt=performance.now()+1000;p.dc.send(JSON.stringify({type:'transport',video}));
 }
 function connectionPhase(phase){call('/connection-phase',JSON.stringify({session:state.session,phase})).catch(()=>{});}
+async function routeType(p){if(!live(p)||typeof p.pc.getStats!=='function')return;try{const stats=await p.pc.getStats();let pair;for(const item of stats.values())if(item.type==='transport'&&item.selectedCandidatePairId)pair=stats.get(item.selectedCandidatePairId);if(!pair)for(const item of stats.values())if(item.type==='candidate-pair'&&item.state==='succeeded'&&item.nominated)pair=item;if(pair){const candidate=stats.get(pair.localCandidateId);if(['host','srflx','prflx','relay'].includes(candidate?.candidateType))connectionPhase('route_'+candidate.candidateType);}}catch{}}
 function ownerGone(p){if(live(p)&&state.active&&!state.host&&!stopped)call('/owner-left',JSON.stringify({session:state.session})).catch(()=>{});}
-function channel(peer,dc){peer.dc=dc;dc.binaryType='arraybuffer';dc.onopen=()=>{if(live(peer)){clearTimeout(peer.deadline);connectionPhase('channel_open');reportTransport(peer);if(state.host&&live(peer)&&peer.dc?.readyState==='open')peer.dc.send(JSON.stringify({type:'media',serial:(++mediaSerial)>>>0,view:state.mode,video:state.videoId||'',position:state.position||0,playing:!!state.playing}));}};dc.onclose=()=>{close(peer.id,peer);};dc.onerror=()=>close(peer.id,peer);
+function channel(peer,dc){peer.dc=dc;dc.binaryType='arraybuffer';dc.onopen=()=>{if(live(peer)){clearTimeout(peer.deadline);connectionPhase('channel_open');routeType(peer);reportTransport(peer);if(state.host&&live(peer)&&peer.dc?.readyState==='open')peer.dc.send(JSON.stringify({type:'media',serial:(++mediaSerial)>>>0,view:state.mode,video:state.videoId||'',position:state.position||0,playing:!!state.playing}));}};dc.onclose=()=>{if(live(peer))connectionPhase('channel_closed');close(peer.id,peer);};dc.onerror=()=>{if(live(peer))connectionPhase('channel_error');close(peer.id,peer);};
  let assembly=null,receiving=false,pendingFrame=null;
  const drain=async()=>{if(receiving)return;receiving=true;try{
   while(pendingFrame&&live(peer)&&state.active&&!state.host){const next=pendingFrame;pendingFrame=null;
-   if(next.mode===state.mode&&!(next.mode===0&&state.video===false))try{await call('/receive/'+next.mode+'/'+next.tag+'/'+next.session,next.frame);}catch{}
+   if(next.mode===state.mode&&!(next.mode===0&&state.video===false))try{await call('/receive/'+next.mode+'/'+next.tag+'/'+next.session,next.frame);peer.delivered=(peer.delivered||0)+1;}catch{}
   }
  }finally{receiving=false;if(!live(peer))pendingFrame=null;}};
  dc.onmessage=async event=>{
@@ -107,8 +113,10 @@ function channel(peer,dc){peer.dc=dc;dc.binaryType='arraybuffer';dc.onopen=()=>{
 }
 function create(id){if(peers.has(id))return peers.get(id);if(peers.size>=4)return null;
  const pc=new RTCPeerConnection({iceServers:Array.isArray(state.iceServers)?state.iceServers:[],bundlePolicy:'max-bundle'}),peer={id,pc,dc:null,closed:false,session};
- peers.set(id,peer);peer.deadline=setTimeout(()=>close(id,peer),60000);
- pc.onconnectionstatechange=()=>{if(!live(peer))return;clearTimeout(peer.reconnectTimer);if(pc.connectionState==='failed'||pc.connectionState==='closed'){close(id,peer);}else if(pc.connectionState==='disconnected'){peer.reconnectTimer=setTimeout(()=>{if(live(peer)&&pc.connectionState==='disconnected')close(id,peer);},4000);}};
+ peers.set(id,peer);peer.deadline=setTimeout(()=>{if(live(peer)){connectionPhase('negotiation_timeout');close(id,peer);}},90000);
+ pc.onconnectionstatechange=()=>{if(!live(peer))return;connectionPhase('pc_'+pc.connectionState);clearTimeout(peer.reconnectTimer);if(pc.connectionState==='failed'||pc.connectionState==='closed'){close(id,peer);}else if(pc.connectionState==='disconnected'){peer.reconnectTimer=setTimeout(()=>{if(live(peer)&&pc.connectionState==='disconnected')close(id,peer);},4000);}};
+ pc.oniceconnectionstatechange=()=>{if(!live(peer))return;connectionPhase('ice_'+pc.iceConnectionState);if(pc.iceConnectionState==='failed')close(id,peer);};
+ pc.onicecandidateerror=()=>{if(live(peer))connectionPhase('gather_error');};
  pc.ondatachannel=e=>channel(peer,e.channel);pc.ontrack=e=>receiveTrack(peer,e);return peer;
 }
 // RTP decoding/playback stays inside the external WebView2 helper. Local raw
@@ -151,12 +159,17 @@ function receiveTrack(p,event){if(!live(p)||state.host)return;
     if(p.rtpCanvas.width!==w||p.rtpCanvas.height!==h){p.rtpCanvas.width=w;p.rtpCanvas.height=h;}
     p.rtpDraw.drawImage(video,0,0,w,h);const pixels=p.rtpDraw.getImageData(0,0,w,h);if(!p.rtpPacket||p.rtpPacket.length!==8+pixels.data.length)p.rtpPacket=new Uint8Array(8+pixels.data.length);const packet=p.rtpPacket,header=new DataView(packet.buffer);header.setUint32(0,w,true);header.setUint32(4,h,true);packet.set(pixels.data,8);
     const mode=state.mode,tag=trackHash(state.videoId),room=state.session;
-    await call('/receive-rgba/'+mode+'/'+tag+'/'+room,packet);p.rtpFrames=(p.rtpFrames||0)+1;
+    await call('/receive-rgba/'+mode+'/'+tag+'/'+room,packet);rxHttpFrames++;p.rtpFrames=(p.rtpFrames||0)+1;
    }
   }
  }catch{}finally{if(live(p))p.rtpTimer=setTimeout(tick,state.mode===1?20:5);}};tick();
 }
-async function gather(pc){if(pc.iceGatheringState==='complete')return;await Promise.race([new Promise(resolve=>{const done=()=>{if(pc.iceGatheringState==='complete'){pc.removeEventListener('icegatheringstatechange',done);resolve();}};pc.addEventListener('icegatheringstatechange',done);done();}),wait(6000)]);}
+async function gather(pc){if(pc.iceGatheringState==='complete')return;await new Promise(resolve=>{
+ let timer;const finish=()=>{clearTimeout(timer);pc.removeEventListener('icegatheringstatechange',changed);resolve();};
+ const changed=()=>{if(pc.iceGatheringState==='complete')finish();};
+ timer=setTimeout(()=>{connectionPhase('gather_timeout');finish();},12000);
+ pc.addEventListener('icegatheringstatechange',changed);changed();
+});}
 async function handle(message){if(!state.active||!message||typeof message.from!=='string'||typeof message.type!=='string')return;
  const id=message.from;let p=null;
  try{if(state.host){
@@ -181,6 +194,19 @@ async function handle(message){if(!state.active||!message||typeof message.from!=
   }else if(message.type==='bye')close(id);
  }}catch(e){await call('/audio-metrics',JSON.stringify({session:state.session,problem:String(e).slice(0,160)})).catch(()=>{});if(p)close(id,p);}finally{pending.delete(id);}
 }
+// Progress is delivery, not an open socket. Keep the invitation on recovery.
+function mediaHealth(p,now=performance.now()){
+ if(!live(p)||state.host||!state.active)return;
+ const scope=state.session+'/'+state.mode+'/'+state.videoId+'/'+!!state.audio+'/'+(state.video!==false);
+ const expected=state.video!==false&&state.playing===true&&
+   (state.audio||state.picture!==false&&state.mode===0&&state.videoId?.length===11);
+ const count=state.audio?(p.audioPackets||0):(rxSharedFrames+rxHttpFrames+(p.delivered||0));
+ if(!expected||p.healthScope!==scope||p.healthCount!==count){
+  if(p.healthScope===scope&&p.healthCount!==count)retries.delete(p.id);
+  p.healthScope=scope;p.healthCount=count;p.healthAt=now;return;
+ }
+ if(now-p.healthAt>=20000){connectionPhase(state.audio?'audio_stalled':'video_stalled');signal(p.id,'bye').catch(()=>{});close(p.id,p);}
+}
 function sourcePeerCount(){return [...peers.values()].filter(p=>live(p)&&p.dc&&p.dc.readyState==='open'&&(!state.host||state.mode!==0||p.video!==false)).length;}
 async function events(){while(!stopped){try{const next=await(await call('/state')).json();adopt(next);
  if(!state.host&&state.picture!==false&&[...peers.values()].some(p=>p.rtpReader||p.rtpVideo))requestShared();
@@ -190,7 +216,7 @@ async function events(){while(!stopped){try{const next=await(await call('/state'
  if(state.active&&!state.host&&performance.now()>helloAt&&!peers.size){helloAt=performance.now()+helloInterval;helloInterval=Math.min(12000,helloInterval+3000);await signal(state.owner,'hello');}
  if(peers.size>0)helloInterval=3000;
  if(state.active&&!(state.host&&state.nativeHost)){const messages=await(await call('/events')).json();for(const message of messages)handle(message).catch(()=>{});}
- for(const p of peers.values()){reportTransport(p);audioVolume(p);if(state.host&&live(p)&&p.dc?.readyState==='open')p.dc.send(JSON.stringify({type:'media',serial:(++mediaSerial)>>>0,view:state.mode,video:state.videoId||'',position:state.position||0,playing:!!state.playing}));}
+ for(const p of peers.values()){reportTransport(p);audioVolume(p);mediaHealth(p);if(state.host&&live(p)&&p.dc?.readyState==='open')p.dc.send(JSON.stringify({type:'media',serial:(++mediaSerial)>>>0,view:state.mode,video:state.videoId||'',position:state.position||0,playing:!!state.playing}));}
  if(state.active&&!state.host&&state.audio&&performance.now()>audioStatsAt){audioStatsAt=performance.now()+1000;let packets=0,energy=0,played=0;
   for(const p of peers.values())if(live(p)){
    if(p.rtpReceiver){const stats=await p.rtpReceiver.getStats();for(const item of stats.values())if(item.type==='inbound-rtp'&&item.kind==='audio'){p.audioPackets=item.packetsReceived||0;p.rtpDiagnostic={packets:item.packetsReceived,emitted:item.jitterBufferEmittedCount,samples:item.totalSamplesReceived,concealed:item.concealedSamples,energy:item.totalAudioEnergy,context:audioContext.state,paused:p.rtpAudio?.paused};}
@@ -205,7 +231,10 @@ function trackHash(id){let h=0;if(id&&id.length===11){h=2166136261;for(let i=0;i
 function broadcast(bytes,mode,track=0){
  const id=++frameId,count=Math.ceil(bytes.length/16384);
  for(const p of peers.values()){
-  if(!live(p)||!p.dc||p.dc.readyState!=='open'||(mode===0&&p.video===false)||p.dc.bufferedAmount>=131072||p.dc.bufferedAmount+bytes.length>524288)continue;
+  if(!live(p)||!p.dc||p.dc.readyState!=='open'||(mode===0&&p.video===false))continue;
+  const now=performance.now();if(p.dc.bufferedAmount>=131072||p.dc.bufferedAmount+bytes.length>524288){p.videoAfter=now+100;p.congestedUntil=now+5000;continue;}
+  if(now<(p.videoAfter||0))continue;
+  p.videoAfter=now+1000/(now<(p.congestedUntil||0)?15:(mode===1?30:(state.fps===30?30:60)));
   for(let index=0;index<count;index++){
    const part=bytes.subarray(index*16384,Math.min((index+1)*16384,bytes.length)),packet=new Uint8Array(20+part.length),header=new DataView(packet.buffer);
    header.setUint32(0,id);header.setUint16(4,index);header.setUint16(6,count);header.setUint32(8,bytes.length);header.setUint32(12,mode);header.setUint32(16,track);packet.set(part,20);p.dc.send(packet);
