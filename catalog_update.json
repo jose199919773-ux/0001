@@ -858,7 +858,7 @@
     {
       "id": "blips-3d",
       "name": "Blips 3D",
-      "version": "1.0.7",
+      "version": "1.0.8",
       "type": "asi",
       "unloadable": true,
       "api": 6,
@@ -886,9 +886,9 @@
       "files": [
         {
           "path": "Jose_blips_3d.asi",
-          "source": "packages/blips-3d/1.0.7/Jose_blips_3d.asi",
+          "source": "packages/blips-3d/1.0.8/Jose_blips_3d.asi",
           "bytes": 443904,
-          "sha256": "2664f69ce9fb08b5b2a7cd78e33677534ac9d6dca32ce23ede6fb716e4c858cd"
+          "sha256": "ffef2aaa3eb2ab3db321934d1d74fe1947956243aa09d6038328fa8dd652c92c"
         }
       ],
       "titles": {
@@ -898,16 +898,10 @@
       },
       "changes": {
         "es": [
-          "Configuración inicial actualizada; comprobación agrupada de marcadores y filtro de distancia optimizado."
-        ],
-        "pt": [
-          "Configuração inicial atualizada; verificação agrupada dos marcadores e filtro de distância otimizado."
+          "Filtros anticipados y lectura compartida de pools durante cada fotograma; conserva diseño y alcance."
         ],
         "en": [
-          "Updated initial configuration; batched marker memory checks and optimized distance filtering."
-        ],
-        "ru": [
-          "Обновлены начальные настройки; групповая проверка памяти меток и оптимизированная фильтрация расстояния."
+          "Private performance candidate; behavior and appearance preserved."
         ]
       },
       "locales": {
@@ -1008,7 +1002,7 @@
     {
       "id": "head-marker",
       "name": "Head Marker",
-      "version": "1.0.6",
+      "version": "1.0.7",
       "type": "asi",
       "unloadable": true,
       "api": 6,
@@ -1036,9 +1030,9 @@
       "files": [
         {
           "path": "Jose_head_marker.asi",
-          "source": "packages/head-marker/1.0.6/Jose_head_marker.asi",
-          "bytes": 339968,
-          "sha256": "8d6492801596931d5a76f31a2c51770837c047db2338eddc638484617b5a6cee"
+          "source": "packages/head-marker/1.0.7/Jose_head_marker.asi",
+          "bytes": 339456,
+          "sha256": "f3ae3d3264cb42dd1f6910bd3c7f695312529ba6c3427043245a4be8b0f7c0ef"
         }
       ],
       "titles": {
@@ -1048,16 +1042,10 @@
       },
       "changes": {
         "es": [
-          "Configuraciones iniciales tomadas de los ajustes guardados para los 23 módulos; los archivos válidos existentes se conservan."
+          "Evita consultas innecesarias y comprueba obstáculos después de proyectar el marcador."
         ],
         "en": [
-          "Initial settings captured from the saved preferences for all 23 modules; existing valid configuration files are preserved."
-        ],
-        "pt": [
-          "Valores iniciais obtidos das configurações salvas dos 23 módulos; arquivos válidos existentes são preservados."
-        ],
-        "ru": [
-          "Начальные параметры взяты из сохранённых настроек всех 23 модулей. Существующие исправные конфигурации сохраняются."
+          "Private performance candidate; behavior and appearance preserved."
         ]
       },
       "locales": {
@@ -1740,7 +1728,7 @@
     },
     {
       "id": "ambient-life",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "name": "Fauna ambiental",
       "titles": {
         "es": "Fauna ambiental",
@@ -1756,16 +1744,10 @@
       },
       "changes": {
         "es": [
-          "Fauna ambiental: renombrado del módulo, presets rebalanceados y valores iniciales más sutiles y realistas (escala ajustada, mayor radio y pausas naturales)."
+          "Reutiliza la base de cámara entre partículas sin cambiar su animación ni calidad."
         ],
         "en": [
-          "Ambient Wildlife: renamed module, rebalanced presets, and subtler, more realistic initial values (adjusted scale, wider radius, and natural pauses)."
-        ],
-        "pt": [
-          "Fauna ambiental: módulo renomeado, predefinições rebalanceadas e valores iniciais mais sutis e realistas (escala ajustada, maior raio e pausas naturais)."
-        ],
-        "ru": [
-          "Окружающая фауна: переименование модуля, перебалансировка пресетов и более естественные начальные параметры (исправленный масштаб, увеличенный радиус и паузы между появлениями)."
+          "Private performance candidate; behavior and appearance preserved."
         ]
       },
       "dependencies": [],
@@ -1793,9 +1775,9 @@
       "files": [
         {
           "path": "Jose_ambient_life.asi",
-          "source": "packages/ambient-life/1.0.2/Jose_ambient_life.asi",
+          "source": "packages/ambient-life/1.0.3/Jose_ambient_life.asi",
           "bytes": 564224,
-          "sha256": "92d8cf3a2fbd937ea327ca1618cd1ac5f7eb83bb47642a1914b246a4e337deec"
+          "sha256": "5647093b19317a5f4181b15ba16fd4603fb787f6fd7de00cd9e352411630b851"
         }
       ],
       "locales": {
@@ -1818,7 +1800,7 @@
     },
     {
       "id": "chat-remake",
-      "version": "1.0.3",
+      "version": "1.0.4",
       "name": "Chat Remake",
       "titles": {
         "es": "Chat Remake",
@@ -1834,25 +1816,19 @@
       },
       "changes": {
         "es": [
-          "Corrige codificación SA-MP independiente del idioma del menú; CP1252/CP1251/UTF-8 explícitos y rechazo de envío incompatible."
+          "Elimina asignaciones JSON repetidas al verificar combinaciones de macros."
         ],
         "en": [
-          "Fix SA-MP encoding boundaries independently of menu language; explicit codepage and lossless sending."
-        ],
-        "pt": [
-          "Corrige codificação SA-MP separada do idioma e impede envio incompatível."
-        ],
-        "ru": [
-          "Исправлена кодировка SA-MP независимо от языка меню."
+          "Private performance candidate; behavior and appearance preserved."
         ]
       },
       "dependencies": [],
       "files": [
         {
           "path": "Jose_chat_remake.asi",
-          "source": "packages/chat-remake/1.0.3/Jose_chat_remake.asi",
+          "source": "packages/chat-remake/1.0.4/Jose_chat_remake.asi",
           "bytes": 4419072,
-          "sha256": "548970ab9feecfd2fb11537dc654fae2d5d5ca40cd5c6f501de2ef3836912f4d"
+          "sha256": "0d904ff0efb32f51c53b4752c17d321a38c4fe44d896323ff4c32c912f856096"
         }
       ],
       "locales": {
@@ -1998,7 +1974,7 @@
     },
     {
       "id": "skin-blood",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "name": "Skin Blood",
       "type": "asi",
       "entry": "Jose_skin_blood.asi",
@@ -2041,21 +2017,18 @@
       "dependencies": [],
       "changes": {
         "es": [
-          "Nuevo módulo de sangrado con gotas ancladas a huesos y vista previa."
+          "Agrupa la búsqueda de personajes con gotas sin cambiar sangre, visibilidad o límites."
         ],
         "en": [
-          "New bone-anchored character bleeding module with preview."
-        ],
-        "pt": [
-          "Novo módulo de sangramento ancorado nos ossos com prévia."
+          "Private performance candidate; behavior and appearance preserved."
         ]
       },
       "files": [
         {
           "path": "Jose_skin_blood.asi",
-          "source": "packages/skin-blood/1.0.0/Jose_skin_blood.asi",
+          "source": "packages/skin-blood/1.0.1/Jose_skin_blood.asi",
           "bytes": 80896,
-          "sha256": "82b6142f7c67ba3788824c668ad2348542989d60e99f48bd632f5a90e9a3cd2d"
+          "sha256": "b76ddf9fae5e2fc517691adb87d39c6b2e543f1e850e3010a1c21a9767f596f5"
         }
       ],
       "previews": [
