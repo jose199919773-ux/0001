@@ -654,7 +654,7 @@
     {
       "id": "weapon-selector",
       "name": "Weapon Selector",
-      "version": "1.0.7",
+      "version": "1.0.8",
       "type": "asi",
       "unloadable": true,
       "api": 6,
@@ -683,9 +683,9 @@
       "files": [
         {
           "path": "Jose_weapon_selector.asi",
-          "source": "packages/weapon-selector/1.0.7/Jose_weapon_selector.asi",
+          "source": "packages/weapon-selector/1.0.8/Jose_weapon_selector.asi",
           "bytes": 212480,
-          "sha256": "73d196016a16cfb887dbbb53ba2768f9d1c16ccbbf0ff1d8a7ede88a9a4ab4b3"
+          "sha256": "b7caae9709a9c6583180c95a8ab072af4c98f4e52978bbc268bff36dd139c0e8"
         }
       ],
       "titles": {
@@ -695,16 +695,16 @@
       },
       "changes": {
         "es": [
-          "Corregido orden de iconos de armas para M4, AK-47 y Tec-9."
+          "Weapon Selector: corregidas las proporciones del puño y la Desert Eagle."
         ],
         "en": [
-          "Corrected weapon icon ordering for M4, AK-47, and Tec-9."
+          "Weapon Selector: corrected the proportions of the fist and Desert Eagle."
         ],
         "pt": [
-          "Corrigida a ordem dos ícones de armas para M4, AK-47 e Tec-9."
+          "Weapon Selector: corrigidas as proporções do punho e da Desert Eagle."
         ],
         "ru": [
-          "Исправлен порядок значков оружия для M4, AK-47 и Tec-9."
+          "Weapon Selector: исправлены пропорции кулака и Desert Eagle."
         ]
       },
       "previews": [
