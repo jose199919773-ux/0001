@@ -1816,7 +1816,7 @@
     },
     {
       "id": "chat-remake",
-      "version": "1.0.4",
+      "version": "1.0.5",
       "name": "Chat Remake",
       "titles": {
         "es": "Chat Remake",
@@ -1832,19 +1832,25 @@
       },
       "changes": {
         "es": [
-          "Elimina asignaciones JSON repetidas al verificar combinaciones de macros."
+          "Corrección del selector de idioma en barra lateral y codificación SA-MP traducida con respaldo embebido."
         ],
         "en": [
-          "Private performance candidate; behavior and appearance preserved."
+          "Sidebar language selector layout fix and translated SA-MP encoding with embedded fallback."
+        ],
+        "pt": [
+          "Correção do seletor de idioma na barra lateral e codificação SA-MP traduzida com fallback integrado."
+        ],
+        "ru": [
+          "Исправление селектора языка в боковой панели и перевод кодировки SA-MP со встроенным резервом."
         ]
       },
       "dependencies": [],
       "files": [
         {
           "path": "Jose_chat_remake.asi",
-          "source": "packages/chat-remake/1.0.4/Jose_chat_remake.asi",
-          "bytes": 4419072,
-          "sha256": "0d904ff0efb32f51c53b4752c17d321a38c4fe44d896323ff4c32c912f856096"
+          "source": "packages/chat-remake/1.0.5/Jose_chat_remake.asi",
+          "bytes": 4454400,
+          "sha256": "f96f25b1fbb5fdfcddcab94cdecfa8007ea774f1b856051f2afa1f7a4549ca0c"
         }
       ],
       "locales": {
