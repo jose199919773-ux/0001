@@ -14,6 +14,9 @@
       "version": "1.0.0",
       "name": "FPS Unlock",
       "type": "asi",
+      "categories": [
+        "fps_up"
+      ],
       "entry": "FPSUnlockMulti.asi",
       "description": {
         "es": "Desbloquea el límite de 90 FPS de SA-MP.",
@@ -49,6 +52,9 @@
       "name": "Marcador de impactos (hitmarker)",
       "version": "1.0.12",
       "type": "asi",
+      "categories": [
+        "mod"
+      ],
       "unloadable": true,
       "api": 6,
       "entry": "Jose_hitmarker.asi",
@@ -127,6 +133,9 @@
       "version": "1.2.6",
       "name": "Reloj",
       "type": "asi",
+      "categories": [
+        "mod"
+      ],
       "entry": "Jose_analog_clock.asi",
       "description": {
         "es": "Reloj analógico o digital en pantalla con alarma, cronómetro, fecha y hora del juego o de tu PC.",
@@ -210,6 +219,9 @@
       "name": "Indicadores de daño",
       "version": "1.0.7",
       "type": "asi",
+      "categories": [
+        "mod"
+      ],
       "unloadable": true,
       "api": 6,
       "entry": "Jose_damage_indicators.asi",
@@ -283,6 +295,9 @@
       "name": "Mira ZA4",
       "version": "1.0.14",
       "type": "asi",
+      "categories": [
+        "mod"
+      ],
       "unloadable": true,
       "api": 6,
       "entry": "Jose_za4_crosshair.asi",
@@ -361,6 +376,9 @@
       "name": "Venas y viñeta",
       "version": "1.0.5",
       "type": "asi",
+      "categories": [
+        "mod"
+      ],
       "unloadable": true,
       "api": 6,
       "entry": "Jose_low_hp_veins.asi",
@@ -441,6 +459,9 @@
       "name": "Sangre superpuesta",
       "version": "1.0.5",
       "type": "asi",
+      "categories": [
+        "mod"
+      ],
       "unloadable": true,
       "api": 6,
       "entry": "Jose_blood_overlay.asi",
@@ -519,6 +540,9 @@
       "name": "Flash y gotas",
       "version": "1.0.6",
       "type": "asi",
+      "categories": [
+        "mod"
+      ],
       "unloadable": true,
       "api": 6,
       "entry": "Jose_screen_blood_drops.asi",
@@ -592,6 +616,9 @@
       "name": "Ammo HUD",
       "version": "1.0.7",
       "type": "asi",
+      "categories": [
+        "mod"
+      ],
       "unloadable": true,
       "api": 6,
       "entry": "Jose_ammo_hud.asi",
@@ -661,6 +688,9 @@
       "name": "Weapon Selector",
       "version": "1.0.8",
       "type": "asi",
+      "categories": [
+        "mod"
+      ],
       "unloadable": true,
       "api": 6,
       "entry": "Jose_weapon_selector.asi",
@@ -727,6 +757,9 @@
       "name": "Visual Armor",
       "version": "1.0.5",
       "type": "asi",
+      "categories": [
+        "mod"
+      ],
       "unloadable": true,
       "api": 6,
       "entry": "Jose_visual_armor.asi",
@@ -799,6 +832,9 @@
       "name": "DS Light Aura",
       "version": "1.0.4",
       "type": "asi",
+      "categories": [
+        "mod"
+      ],
       "unloadable": true,
       "api": 6,
       "entry": "Jose_ds_light_aura.asi",
@@ -871,6 +907,9 @@
       "name": "Blips 3D",
       "version": "1.0.8",
       "type": "asi",
+      "categories": [
+        "mod"
+      ],
       "unloadable": true,
       "api": 6,
       "entry": "Jose_blips_3d.asi",
@@ -937,6 +976,9 @@
       "name": "CPF Death Screen",
       "version": "1.0.7",
       "type": "asi",
+      "categories": [
+        "mod"
+      ],
       "unloadable": true,
       "api": 6,
       "entry": "Jose_cpf_death_screen.asi",
@@ -1015,6 +1057,9 @@
       "name": "Head Marker",
       "version": "1.0.7",
       "type": "asi",
+      "categories": [
+        "mod"
+      ],
       "unloadable": true,
       "api": 6,
       "entry": "Jose_head_marker.asi",
@@ -1081,6 +1126,9 @@
       "name": "NameCFlow",
       "version": "1.0.6",
       "type": "asi",
+      "categories": [
+        "mod"
+      ],
       "unloadable": true,
       "api": 6,
       "entry": "Jose_name_cflow.asi",
@@ -1160,6 +1208,9 @@
       "name": "Quit Notify",
       "version": "1.0.4",
       "type": "asi",
+      "categories": [
+        "mod"
+      ],
       "unloadable": true,
       "api": 6,
       "entry": "Jose_quit_notify.asi",
@@ -1232,6 +1283,9 @@
       "name": "Mobile Detect",
       "version": "1.0.6",
       "type": "asi",
+      "categories": [
+        "mod"
+      ],
       "unloadable": true,
       "api": 6,
       "entry": "Jose_mobile_detect.asi",
@@ -1304,6 +1358,9 @@
       "version": "1.0.23",
       "name": "Tablet Radar",
       "type": "asi",
+      "categories": [
+        "mod"
+      ],
       "entry": "Jose_custom_radar.asi",
       "description": {
         "es": "Muestra un radar portátil en forma de mini tablet en tu pantalla con el mapa, iconos y jugadores cercanos.",
@@ -1378,6 +1435,9 @@
       "version": "1.0.10",
       "name": "Ubicación",
       "type": "asi",
+      "categories": [
+        "mod"
+      ],
       "entry": "Jose_location_widget.asi",
       "unloadable": true,
       "api": 6,
@@ -1463,6 +1523,10 @@
       "version": "1.0.4",
       "name": "Contador de FPS",
       "type": "asi",
+      "categories": [
+        "mod",
+        "fps_up"
+      ],
       "entry": "Jose_fps_widget.asi",
       "unloadable": true,
       "api": 6,
@@ -1553,6 +1617,9 @@
         "pt": "Suporte para controle"
       },
       "type": "asi",
+      "categories": [
+        "mod"
+      ],
       "entry": "JoseStore_Control.asi",
       "description": {
         "es": "Juega con mando en PC con vibración, control de menús, cursor asistido y teclado en pantalla para chatear.",
@@ -1619,6 +1686,9 @@
       "name": "Efeh Web",
       "version": "1.3.3",
       "type": "asi",
+      "categories": [
+        "mod"
+      ],
       "entry": "Jose_efeh_web.asi",
       "unloadable": true,
       "api": 8,
@@ -1692,6 +1762,9 @@
       "name": "YouTube",
       "version": "1.0.0",
       "type": "asi",
+      "categories": [
+        "mod"
+      ],
       "entry": "Jose_youtube.asi",
       "unloadable": true,
       "api": 8,
@@ -1752,6 +1825,9 @@
         "pt": "Fauna ambiental"
       },
       "type": "asi",
+      "categories": [
+        "mod"
+      ],
       "entry": "Jose_ambient_life.asi",
       "description": {
         "es": "Añade mariposas, insectos, hojas al viento o plumas flotando a tu alrededor para darle más vida al entorno.",
@@ -1816,7 +1892,7 @@
     },
     {
       "id": "chat-remake",
-      "version": "1.0.7",
+      "version": "1.0.8",
       "name": "Chat Remake",
       "titles": {
         "es": "Chat Remake",
@@ -1824,6 +1900,9 @@
         "pt": "Chat Remake"
       },
       "type": "asi",
+      "categories": [
+        "mod"
+      ],
       "entry": "Jose_chat_remake.asi",
       "description": {
         "es": "Chat personalizable para SA-MP. Ajustes: /chatremake.",
@@ -1832,25 +1911,25 @@
       },
       "changes": {
         "es": [
-          "Degradado dinámico en selector de categorías sincronizado con el color de acento."
+          "Optimizaciones profundas de rendimiento, frametime y memoria; barrido condicional de macros y filtrado eficiente."
         ],
         "pt": [
-          "Gradiente dinâmico no seletor de categorias sincronizado com a cor de destaque."
+          "Otimizações profundas de desempenho, frametime e memória; varredura condicional de macros e filtragem eficiente."
         ],
         "en": [
-          "Dynamic gradient on category selector synchronized with accent color."
+          "Deep performance, frametime and memory optimizations; conditional macro polling and efficient filtering."
         ],
         "ru": [
-          "Динамический градиент на селекторе категорий, синхронизированный с цветом акцента."
+          "Глубокая оптимизация производительности, фреймтайма и памяти; условный опрос макросов и эффективная фильтрация."
         ]
       },
       "dependencies": [],
       "files": [
         {
           "path": "Jose_chat_remake.asi",
-          "source": "packages/chat-remake/1.0.7/Jose_chat_remake.asi",
-          "bytes": 4453888,
-          "sha256": "decc829475a81747486e3e780cd59bde0d8aa8e375951bd8207b951b7fdfd04d"
+          "source": "packages/chat-remake/1.0.8/Jose_chat_remake.asi",
+          "bytes": 4443136,
+          "sha256": "98d4508e4b806f7e4776d6e6a41005896f1c70ceabde174927c9a03717b2a709"
         }
       ],
       "locales": {
@@ -1882,6 +1961,9 @@
         "pt": "Menu de pausa"
       },
       "type": "asi",
+      "categories": [
+        "mod"
+      ],
       "entry": "Jose_pause_menu.asi",
       "description": {
         "es": "Menú de pausa personalizable con un diseño renovado.",
@@ -2000,6 +2082,9 @@
       "version": "1.0.1",
       "name": "Skin Blood",
       "type": "asi",
+      "categories": [
+        "mod"
+      ],
       "entry": "Jose_skin_blood.asi",
       "api": 6,
       "unloadable": true,
