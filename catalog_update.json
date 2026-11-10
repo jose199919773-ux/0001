@@ -129,9 +129,9 @@
       "type": "asi",
       "entry": "Jose_analog_clock.asi",
       "description": {
-        "es": "Reloj analógico, digital o de hora real del equipo, con fecha opcional, alarma y temporizador. Configurable en Extras > Widgets. Requiere Hud Remake.",
-        "en": "Analog, digital or local system clock, with optional date, alarm and timer. Configure in Extras > Widgets. Requires Hud Remake.",
-        "pt": "Relógio analógico, digital ou de hora real do computador, com data opcional, alarme e temporizador. Configure em Extras > Widgets. Requer Hud Remake."
+        "es": "Reloj analógico o digital en pantalla con alarma, cronómetro, fecha y hora del juego o de tu PC.",
+        "en": "On-screen analog or digital clock with alarm, stopwatch, date, and game or system time.",
+        "pt": "Relógio analógico ou digital na tela com alarme, cronômetro, data e hora do jogo ou do PC."
       },
       "files": [
         {
@@ -198,7 +198,12 @@
           "width": 1023,
           "height": 576
         }
-      ]
+      ],
+      "locales": {
+        "ru": {
+          "description": "Аналоговые или цифровые часы на экране с будильником, секундомером, датой и игровым или системным временем."
+        }
+      }
     },
     {
       "id": "damage-indicators",
@@ -224,9 +229,9 @@
         ]
       },
       "description": {
-        "es": "Indicadores de dirección del daño y avisos de apuntado de otros jugadores en SA-MP. Requiere Hud Remake.",
-        "en": "Damage direction indicators and warnings when other SA-MP players aim at you. Requires Hud Remake.",
-        "pt": "Indicadores da direção do dano e avisos quando outros jogadores SA-MP miram em você. Requer Hud Remake."
+        "es": "Flechas en pantalla que te señalan desde dónde te disparan y te alertan si alguien te está apuntando.",
+        "en": "On-screen directional arrows showing where shots come from and alerting you if someone is aiming at you.",
+        "pt": "Setas na tela apontando de onde você está recebendo tiros e alertando se alguém estiver mirando em você."
       },
       "dependencies": [],
       "files": [
@@ -259,7 +264,7 @@
       "locales": {
         "ru": {
           "name": "Индикаторы повреждений",
-          "description": "Индикаторы направления урона и предупреждения, когда другие игроки SA-MP целятся в вас. Требуется Hud Remake.",
+          "description": "Стрелки на экране, указывающие направление входящего урона и предупреждающие, если кто-то целится в вас.",
           "summary": "Оповещения о направлении повреждения и прицеливании"
         }
       },
@@ -740,9 +745,9 @@
         ]
       },
       "description": {
-        "es": "Chaleco visual local con modelo, posición, rotación, escala y color editables. Requiere los modelos de SA-MP y Hud Remake actualizado.",
-        "en": "Local visual armor with editable model, position, rotation, scale and color. Requires SA-MP models and updated Hud Remake.",
-        "pt": "Colete visual local com modelo, posição, rotação, escala e cor ajustáveis. Requer os modelos do SA-MP e Hud Remake atualizado."
+        "es": "Coloca un chaleco antibalas visible en tu personaje. Puedes elegir el modelo, ajustarlo a tu skin y cambiarle el color.",
+        "en": "Places visible body armor on your character. Choose the model, adjust it to your skin, and customize its color.",
+        "pt": "Coloca um colete balístico visível no seu personaje. Escolha o modelo, ajuste à sua skin e altere a cor."
       },
       "dependencies": [],
       "files": [
@@ -775,7 +780,7 @@
       "locales": {
         "ru": {
           "name": "Визуальная броня",
-          "description": "Локальная визуальная броня с редактируемой моделью, положением, вращением, масштабом и цветом. Требуются модели SA-MP и обновленный Hud Remake.",
+          "description": "Отображает видимый бронежилет на вашем персонаже. Выбирайте модель, подгоняйте под скин и меняйте цвет.",
           "summary": "Видимая броня на персонаже"
         }
       },
@@ -1028,9 +1033,9 @@
         ]
       },
       "description": {
-        "es": "Marcadores sobre personajes con colores según vida y alcance ajustable.",
-        "en": "Markers above characters with health colors and adjustable range.",
-        "pt": "Marcadores sobre personagens com cores por vida e alcance ajustável."
+        "es": "Marcador sobre la cabeza de otros jugadores que cambia de color según cuánta vida les quede.",
+        "en": "Marker above other players' heads that changes color based on their remaining health.",
+        "pt": "Marcador acima da cabeça dos outros jogadores que muda de cor conforme a vida restante."
       },
       "dependencies": [],
       "files": [
@@ -1057,7 +1062,7 @@
       "locales": {
         "ru": {
           "name": "Маркер головы игрока",
-          "description": "Маркеры над персонажами с цветами здоровья и регулируемым диапазоном.",
+          "description": "Маркер над головой других игроков, меняющий цвет в зависимости от оставшегося здоровья.",
           "summary": "Маркер над символами"
         }
       },
@@ -1100,9 +1105,9 @@
         "groupIcon": ""
       },
       "description": {
-        "es": "Texto nativo de GTA con posición, fuente, color RGB y contorno.",
-        "en": "Native GTA text with position, font, RGB color and outline.",
-        "pt": "Texto nativo do GTA com posição, fonte, cor RGB e contorno."
+        "es": "Muestra un texto o apodo personalizado en pantalla con las fuentes de GTA. Puedes cambiar lo que dice, moverlo de lugar y ajustar su tamaño, color y contorno a tu gusto.",
+        "en": "Displays custom text or a nickname on screen using GTA SA fonts. Customize the text, move its position, and adjust size, colors, and outline.",
+        "pt": "Exibe um texto ou apelido personalizado na tela com as fontes do GTA. Você pode alterar o texto, reposicioná-lo e ajustar tamanho, cor e contorno."
       },
       "dependencies": [],
       "files": [
@@ -1135,7 +1140,7 @@
       "locales": {
         "ru": {
           "name": "Имя CFlow",
-          "description": "Собственный текст GTA с положением, шрифтом, цветом RGB и контуром.",
+          "description": "Отображает настраиваемый текст или никнейм на экране шрифтами GTA. Можно менять текст, перемещать его, настраивать размер, цвета и обводку.",
           "summary": "Имя с пользовательским шрифтом и стилем",
           "groupName": "Виджеты"
         }
@@ -1173,9 +1178,9 @@
         ]
       },
       "description": {
-        "es": "Avisos de desconexión cerca del jugador. Sólo SA-MP.",
-        "en": "Nearby player disconnection notices. SA-MP only.",
-        "pt": "Avisos de desconexão próximos ao jogador. Apenas SA-MP."
+        "es": "Te avisa en pantalla cuando un jugador cercano se desconecta, crashea o se sale del servidor.",
+        "en": "Alerts you on screen when a nearby player disconnects, crashes, or leaves the server. SA-MP only.",
+        "pt": "Avisa na tela quando um jogador próximo desconecta, fecha o jogo ou sai do servidor. Exclusivo para SA-MP."
       },
       "dependencies": [],
       "files": [
@@ -1208,7 +1213,7 @@
       "locales": {
         "ru": {
           "name": "Уведомления об отключении",
-          "description": "Уведомления об отключении игрока, находящегося поблизости.  Только SA-MP.",
+          "description": "Оповещает на экране, когда игрок поблизости отключается, вылетает или покидает сервер. Только для SA-MP.",
           "summary": "Уведомления об отключении в SA-MP"
         }
       },
@@ -1245,9 +1250,9 @@
         ]
       },
       "description": {
-        "es": "Indicador de jugadores móviles según su sincronización. Sólo SA-MP.",
-        "en": "Mobile player indicator based on their synchronization. SA-MP only.",
-        "pt": "Indicador de jogadores móveis conforme a sincronização. Apenas SA-MP."
+        "es": "Muestra un icono sobre los jugadores que están jugando desde celular (Android). Exclusivo de SA-MP.",
+        "en": "Displays an icon above players who are playing from mobile (Android). SA-MP only.",
+        "pt": "Exibe um ícone sobre os jogadores que estão jogando pelo celular (Android). Exclusivo para SA-MP."
       },
       "dependencies": [],
       "files": [
@@ -1280,7 +1285,7 @@
       "locales": {
         "ru": {
           "name": "Обнаружение мобильных устройств",
-          "description": "Индикатор мобильных плееров на основе их синхронизации.  Только SA-MP.",
+          "description": "Показывает значок над игроками, играющими с мобильных устройств (Android). Только для SA-MP.",
           "summary": "Идентификация мобильных игроков в SA-MP"
         }
       },
@@ -1301,9 +1306,9 @@
       "type": "asi",
       "entry": "Jose_custom_radar.asi",
       "description": {
-        "es": "Radar en una tablet pequeña: jugadores, iconos y efectos. Comparte el mapa instalado desde Efeh Maps.",
-        "en": "Small tablet radar with players, icons and effects. Shares the map installed from Efeh Maps.",
-        "pt": "Radar em uma pequena tablet: jogadores, ícones e efeitos. Compartilha o mapa instalado pelo Efeh Maps."
+        "es": "Muestra un radar portátil en forma de mini tablet en tu pantalla con el mapa, iconos y jugadores cercanos.",
+        "en": "Displays a portable mini-tablet radar on screen with the map, icons, and nearby players.",
+        "pt": "Exibe um radar portátil em formato de mini tablet na tela com o mapa, ícones e jogadores próximos."
       },
       "unloadable": true,
       "api": 7,
@@ -1361,7 +1366,12 @@
           "width": 1023,
           "height": 576
         }
-      ]
+      ],
+      "locales": {
+        "ru": {
+          "description": "Отображает портативный радар в виде мини-планшета на экране с картой, значками и ближайшими игроками."
+        }
+      }
     },
     {
       "id": "location-widget",
@@ -1372,9 +1382,9 @@
       "unloadable": true,
       "api": 6,
       "description": {
-        "es": "Barrio, ciudad o región y coordenadas opcionales. Posición, tamaño, colores y visibilidad ajustables. Requiere Hud Remake.",
-        "en": "Neighborhood, city or region and optional coordinates. Adjustable position, size, colors and visibility. Requires Hud Remake.",
-        "pt": "Bairro, cidade ou região e coordenadas opcionais. Posição, tamanho, cores e visibilidade ajustáveis. Requer Hud Remake."
+        "es": "Muestra en pantalla el barrio, ciudad o zona donde te encuentras dentro del mapa.",
+        "en": "Displays the current district, city, or zone you are in on the map.",
+        "pt": "Exibe na tela o bairro, cidade ou região onde você está no mapa."
       },
       "module": {
         "group": "widgets",
@@ -1432,7 +1442,7 @@
       "locales": {
         "ru": {
           "name": "Местоположение",
-          "description": "Район, город или регион и необязательные координаты. Регулируемое положение, размер, цвета и видимость. Требуется Hud Remake.",
+          "description": "Показывает на экране текущий район, город или зону на карте.",
           "title": "Местоположение",
           "summary": "Район, город и координаты",
           "groupName": "Виджеты"
@@ -1458,9 +1468,9 @@
       "api": 6,
       "dependencies": [],
       "description": {
-        "es": "FPS con promedio e intervalo de actualización ajustable. Posición, tamaño, color y fondo configurables. Requiere Hud Remake.",
-        "en": "FPS with averaged readings and adjustable update interval. Configurable position, size, color and background. Requires Hud Remake.",
-        "pt": "FPS com média e intervalo de atualização ajustável. Posição, tamanho, cor e fundo configuráveis. Requer Hud Remake."
+        "es": "Contador de FPS ligero en pantalla con promedio y color personalizable.",
+        "en": "Lightweight on-screen FPS counter with average rate and customizable color.",
+        "pt": "Contador de FPS leve na tela com média e cor personalizável."
       },
       "module": {
         "group": "widgets",
@@ -1517,7 +1527,7 @@
       "locales": {
         "ru": {
           "name": "Счетчик кадров в секунду",
-          "description": "FPS с усредненными показаниями и настраиваемым интервалом обновления. Настраиваемое положение, размер, цвет и фон. Требуется Hud Remake.",
+          "description": "Легкий счетчик кадров в секунду (FPS) на экране со средним значением и настройкой цвета.",
           "title": "Счетчик FPS",
           "summary": "Кадров в секунду при стабильных показаниях",
           "groupName": "Виджеты"
@@ -1545,9 +1555,9 @@
       "type": "asi",
       "entry": "JoseStore_Control.asi",
       "description": {
-        "es": "Control del juego, cursor, atajos y teclado de chat personalizable dentro de Efeh.",
-        "en": "Game controls, cursor, shortcuts and customizable chat keyboard inside Efeh.",
-        "pt": "Controles do jogo, cursor, atalhos e teclado de chat personalizável no Efeh."
+        "es": "Juega con mando en PC con vibración, control de menús, cursor asistido y teclado en pantalla para chatear.",
+        "en": "Play with a controller on PC with vibration, menu navigation, assisted cursor, and an on-screen keyboard for chat.",
+        "pt": "Jogue com controle no PC com vibração, navegação em menus, cursor assistido e teclado na tela para o chat."
       },
       "files": [
         {
@@ -1560,7 +1570,7 @@
       "locales": {
         "ru": {
           "name": "Soporte de mando",
-          "description": "Элементы управления игрой, курсор, ярлыки и настраиваемая клавиатура чата внутри Efeh.",
+          "description": "Играйте с геймпадом на ПК с вибрацией, управлением меню, вспомогательным курсором и экранной клавиатурой для чата.",
           "title": "Soporte de mando",
           "summary": "Элементы управления и настройки контроллера",
           "groupName": "Приложения"
@@ -1629,16 +1639,16 @@
         }
       },
       "description": {
-        "es": "Navegador web completo integrado a la tablet. Accede a sitios web en tiempo real directamente desde el juego.",
-        "en": "Full-featured web browser integrated into the tablet. Access websites in real time directly from the game.",
-        "pt": "Navegador web completo integrado ao tablet. Acesse sites em tempo real diretamente pelo jogo."
+        "es": "Navega por internet desde la tablet sin salir del juego. Abre guías, páginas o contenido web mientras juegas.",
+        "en": "Browse the web from the tablet without leaving the game. Open guides, websites, or web content while playing.",
+        "pt": "Navegue pela internet no tablet sem sair do jogo. Abra guias, páginas ou conteúdo da web enquanto joga."
       },
       "locales": {
         "ru": {
           "name": "Efeh Web",
           "title": "Efeh Web",
           "summary": "Веб-браузер в отдельном процессе",
-          "description": "Полнофункциональный веб-браузер, встроенный в планшет. Доступ к сайтам в реальном времени прямо из игры."
+          "description": "Просматривайте интернет прямо с планшета, не выходя из игры. Открывайте гайды, сайты и веб-контент во время игры."
         }
       },
       "files": [
@@ -1702,14 +1712,14 @@
         }
       },
       "description": {
-        "es": "App opcional. Conserva búsqueda, música, listas y JBL del reproductor. Vídeo con WebView2 externo; el resto del HUD no depende de ese runtime.",
-        "en": "Optional app with search, music, playlists and JBL. External WebView2 video; the rest of the HUD does not depend on that runtime.",
-        "pt": "App opcional com pesquisa, música, listas e JBL. Vídeo com WebView2 externo; o restante do HUD não depende desse runtime."
+        "es": "Reproduce música y videos de YouTube directamente desde la tablet mientras juegas. Busca canciones, pon listas de reproducción y escucha de fondo sin salir de la partida.",
+        "en": "Play YouTube music and videos directly from the tablet while playing. Search songs, play playlists, and listen in the background without leaving the game.",
+        "pt": "Reproduza músicas e vídeos do YouTube diretamente do tablet enquanto joga. Pesquise músicas, coloque playlists e ouça em segundo plano sem sair do jogo."
       },
       "locales": {
         "ru": {
           "name": "YouTube",
-          "description": "Дополнительное приложение: поиск, музыка, плейлисты и JBL. Для видео используется отдельный WebView2. Остальной HUD не зависит от этой среды.",
+          "description": "Воспроизводите музыку и видео с YouTube прямо с планшета во время игры. Ищите треки, запускайте плейлисты и слушайте в фоне, не выходя из игры.",
           "title": "YouTube",
           "summary": "Видео, музыка и плейлисты на планшете"
         }
@@ -1744,9 +1754,9 @@
       "type": "asi",
       "entry": "Jose_ambient_life.asi",
       "description": {
-        "es": "Mariposas, insectos, hojas y plumas animados alrededor del personaje o en pantalla. Selección de imágenes, presets, movimiento, duración y vista previa.",
-        "en": "Animated butterflies, insects, leaves and feathers around the character or on screen. Image selection, presets, motion, lifetime and preview.",
-        "pt": "Borboletas, insetos, folhas e penas animados ao redor do personagem ou na tela. Seleção de imagens, predefinições, movimento, duração e prévia."
+        "es": "Añade mariposas, insectos, hojas al viento o plumas flotando a tu alrededor para darle más vida al entorno.",
+        "en": "Adds animated butterflies, insects, falling leaves, or floating feathers around you to bring the world to life.",
+        "pt": "Adiciona borboletas, insetos, folhas ao vento ou penas flutuando ao seu redor para dar mais vida ao cenário."
       },
       "changes": {
         "es": [
@@ -1789,7 +1799,7 @@
       "locales": {
         "ru": {
           "name": "Окружающая фауна",
-          "description": "Анимированные бабочки, насекомые, листья и перья вокруг персонажа или на экране. Выбор изображений, наборы, движение, время жизни и предпросмотр.",
+          "description": "Добавляет бабочек, насекомых, падающие листья и перья вокруг персонажа, оживляя окружающий мир.",
           "title": "Окружающая фауна",
           "summary": "Бабочки, насекомые, листья и перья"
         }
@@ -1993,9 +2003,9 @@
         "pt": "Skin Blood"
       },
       "description": {
-        "es": "Gotas de sangre que siguen los huesos del personaje, según su vida. Cantidad, tamaño, velocidad, gravedad y zona configurables.",
-        "en": "Blood drops follow animated character bones according to health. Adjustable amount, size, speed, gravity and placement.",
-        "pt": "Gotas de sangue acompanham os ossos do personagem conforme a vida. Quantidade, tamanho, velocidade, gravidade e área configuráveis."
+        "es": "Efecto de sangre realista sobre el cuerpo de tu personaje cuando recibe daño o tiene poca vida.",
+        "en": "Realistic blood effect attached to your character's body when taking damage or running low on health.",
+        "pt": "Efeito realista de sangue no corpo do seu personagem ao receber dano ou ficar com pouca vida."
       },
       "module": {
         "group": "combat",
@@ -2046,7 +2056,12 @@
           "width": 1023,
           "height": 576
         }
-      ]
+      ],
+      "locales": {
+        "ru": {
+          "description": "Реалистичный эффект крови на теле вашего персонажа при получении урона или низком запасе здоровья."
+        }
+      }
     }
   ]
 }
