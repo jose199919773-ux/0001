@@ -1735,9 +1735,9 @@
           "pt": "Efeh Web"
         },
         "summary": {
-          "es": "Navegador web integrado",
-          "en": "Integrated web browser",
-          "pt": "Navegador web integrado"
+          "es": "Navega por internet sin salir del juego",
+          "en": "Browse the web without leaving the game",
+          "pt": "Navegue pela internet sem sair do jogo"
         }
       },
       "description": {
@@ -1749,7 +1749,7 @@
         "ru": {
           "name": "Efeh Web",
           "title": "Efeh Web",
-          "summary": "Встроенный веб-браузер",
+          "summary": "Интернет прямо в игре без переключения окон",
           "description": "Просматривайте интернет прямо с планшета, не выходя из игры. Открывайте гайды, сайты и веб-контент во время игры."
         }
       },
