@@ -614,7 +614,7 @@
     {
       "id": "ammo-hud",
       "name": "Ammo HUD",
-      "version": "1.0.7",
+      "version": "1.0.8",
       "type": "asi",
       "categories": [
         "mod"
@@ -645,13 +645,13 @@
       "files": [
         {
           "path": "Jose_ammo_hud.asi",
-          "source": "packages/ammo-hud/1.0.7/Jose_ammo_hud.asi",
+          "source": "packages/ammo-hud/1.0.8/Jose_ammo_hud.asi",
           "bytes": 120832,
-          "sha256": "bb48e1ed132b9cc0a0b5d144d734ba899986ad80ada6d084b4d75e7e1d11f8be"
+          "sha256": "a044ea0d85df873534e3a4c67f47d3ae295e0ab0164177176dd1f1fe0e5330b1"
         },
         {
           "path": "assets/ammo.png",
-          "source": "packages/ammo-hud/1.0.7/assets/ammo.png",
+          "source": "packages/ammo-hud/1.0.8/assets/ammo.png",
           "bytes": 2309,
           "sha256": "45db0deaa765d8b16689584fbec35c94bf0aa6fd6eb3d451ddb3989d0b2c3491"
         }
@@ -663,7 +663,17 @@
       },
       "changes": {
         "es": [
-          "Cuatro diseños compactos animados, incluidos Zombie Army 4 y tres diseños propios. Vista previa por tipo de recarga."
+          "Cuatro diseños compactos animados, incluidos Zombie Army 4 y tres diseños propios. Vista previa por tipo de recarga.",
+          "Auditoría privada de consultas nativas; estética, animaciones y funcionamiento conservados."
+        ],
+        "en": [
+          "Private native-query audit; appearance, animations and functionality preserved."
+        ],
+        "pt": [
+          "Auditoria privada de consultas nativas; aparência, animações e funcionamento preservados."
+        ],
+        "ru": [
+          "Частный аудит нативных запросов; оформление, анимации и функциональность сохранены."
         ]
       },
       "locales": {
@@ -686,7 +696,7 @@
     {
       "id": "weapon-selector",
       "name": "Weapon Selector",
-      "version": "1.0.8",
+      "version": "1.0.9",
       "type": "asi",
       "categories": [
         "mod"
@@ -718,9 +728,9 @@
       "files": [
         {
           "path": "Jose_weapon_selector.asi",
-          "source": "packages/weapon-selector/1.0.8/Jose_weapon_selector.asi",
-          "bytes": 212480,
-          "sha256": "b7caae9709a9c6583180c95a8ab072af4c98f4e52978bbc268bff36dd139c0e8"
+          "source": "packages/weapon-selector/1.0.9/Jose_weapon_selector.asi",
+          "bytes": 212992,
+          "sha256": "82618935c58dc8d70656967fdcea1d12892cb4619fc93b1e4412355ea251fe81"
         }
       ],
       "titles": {
@@ -730,16 +740,20 @@
       },
       "changes": {
         "es": [
-          "Weapon Selector: corregidas las proporciones del puño y la Desert Eagle."
+          "Weapon Selector: corregidas las proporciones del puño y la Desert Eagle.",
+          "Auditoría privada de consultas nativas; estética, animaciones y funcionamiento conservados."
         ],
         "en": [
-          "Weapon Selector: corrected the proportions of the fist and Desert Eagle."
+          "Weapon Selector: corrected the proportions of the fist and Desert Eagle.",
+          "Private native-query audit; appearance, animations and functionality preserved."
         ],
         "pt": [
-          "Weapon Selector: corrigidas as proporções do punho e da Desert Eagle."
+          "Weapon Selector: corrigidas as proporções do punho e da Desert Eagle.",
+          "Auditoria privada de consultas nativas; aparência, animações e funcionamento preservados."
         ],
         "ru": [
-          "Weapon Selector: исправлены пропорции кулака и Desert Eagle."
+          "Weapon Selector: исправлены пропорции кулака и Desert Eagle.",
+          "Частный аудит нативных запросов; оформление, анимации и функциональность сохранены."
         ]
       },
       "previews": [
@@ -755,7 +769,7 @@
     {
       "id": "visual-armor",
       "name": "Visual Armor",
-      "version": "1.0.5",
+      "version": "1.0.6",
       "type": "asi",
       "categories": [
         "mod"
@@ -786,9 +800,9 @@
       "files": [
         {
           "path": "Jose_visual_armor.asi",
-          "source": "packages/visual-armor/1.0.5/Jose_visual_armor.asi",
+          "source": "packages/visual-armor/1.0.6/Jose_visual_armor.asi",
           "bytes": 22528,
-          "sha256": "c88d8757d0619be0f47a6ff567bd01d8e97b0653abff035ad765d870d38a5692"
+          "sha256": "963ddbc5d7f2112dab930d9c1ea10635ac228d05cb7d90946278d9fcd9e34c40"
         }
       ],
       "titles": {
@@ -798,16 +812,20 @@
       },
       "changes": {
         "es": [
-          "Configuraciones iniciales tomadas de los ajustes guardados para los 23 módulos; los archivos válidos existentes se conservan."
+          "Configuraciones iniciales tomadas de los ajustes guardados para los 23 módulos; los archivos válidos existentes se conservan.",
+          "Auditoría privada de consultas nativas; estética, animaciones y funcionamiento conservados."
         ],
         "en": [
-          "Initial settings captured from the saved preferences for all 23 modules; existing valid configuration files are preserved."
+          "Initial settings captured from the saved preferences for all 23 modules; existing valid configuration files are preserved.",
+          "Private native-query audit; appearance, animations and functionality preserved."
         ],
         "pt": [
-          "Valores iniciais obtidos das configurações salvas dos 23 módulos; arquivos válidos existentes são preservados."
+          "Valores iniciais obtidos das configurações salvas dos 23 módulos; arquivos válidos existentes são preservados.",
+          "Auditoria privada de consultas nativas; aparência, animações e funcionamento preservados."
         ],
         "ru": [
-          "Начальные параметры взяты из сохранённых настроек всех 23 модулей. Существующие исправные конфигурации сохраняются."
+          "Начальные параметры взяты из сохранённых настроек всех 23 модулей. Существующие исправные конфигурации сохраняются.",
+          "Частный аудит нативных запросов; оформление, анимации и функциональность сохранены."
         ]
       },
       "locales": {
@@ -830,7 +848,7 @@
     {
       "id": "ds-light-aura",
       "name": "DS Light Aura",
-      "version": "1.0.4",
+      "version": "1.0.5",
       "type": "asi",
       "categories": [
         "mod"
@@ -861,9 +879,9 @@
       "files": [
         {
           "path": "Jose_ds_light_aura.asi",
-          "source": "packages/ds-light-aura/1.0.4/Jose_ds_light_aura.asi",
+          "source": "packages/ds-light-aura/1.0.5/Jose_ds_light_aura.asi",
           "bytes": 16384,
-          "sha256": "865809bd68d763a9b5897082d42f8f6c3d8901c72f79f38466f325484949baa1"
+          "sha256": "ed2097b456f47eca22a56d42815774e956c37caa7246a1254dba0aa0724a4a6d"
         }
       ],
       "titles": {
@@ -873,16 +891,20 @@
       },
       "changes": {
         "es": [
-          "Configuraciones iniciales tomadas de los ajustes guardados para los 23 módulos; los archivos válidos existentes se conservan."
+          "Configuraciones iniciales tomadas de los ajustes guardados para los 23 módulos; los archivos válidos existentes se conservan.",
+          "Auditoría privada de consultas nativas; estética, animaciones y funcionamiento conservados."
         ],
         "en": [
-          "Initial settings captured from the saved preferences for all 23 modules; existing valid configuration files are preserved."
+          "Initial settings captured from the saved preferences for all 23 modules; existing valid configuration files are preserved.",
+          "Private native-query audit; appearance, animations and functionality preserved."
         ],
         "pt": [
-          "Valores iniciais obtidos das configurações salvas dos 23 módulos; arquivos válidos existentes são preservados."
+          "Valores iniciais obtidos das configurações salvas dos 23 módulos; arquivos válidos existentes são preservados.",
+          "Auditoria privada de consultas nativas; aparência, animações e funcionamento preservados."
         ],
         "ru": [
-          "Начальные параметры взяты из сохранённых настроек всех 23 модулей. Существующие исправные конфигурации сохраняются."
+          "Начальные параметры взяты из сохранённых настроек всех 23 модулей. Существующие исправные конфигурации сохраняются.",
+          "Частный аудит нативных запросов; оформление, анимации и функциональность сохранены."
         ]
       },
       "locales": {
@@ -905,7 +927,7 @@
     {
       "id": "blips-3d",
       "name": "Blips 3D",
-      "version": "1.0.8",
+      "version": "1.0.9",
       "type": "asi",
       "categories": [
         "mod"
@@ -936,9 +958,9 @@
       "files": [
         {
           "path": "Jose_blips_3d.asi",
-          "source": "packages/blips-3d/1.0.8/Jose_blips_3d.asi",
-          "bytes": 443904,
-          "sha256": "ffef2aaa3eb2ab3db321934d1d74fe1947956243aa09d6038328fa8dd652c92c"
+          "source": "packages/blips-3d/1.0.9/Jose_blips_3d.asi",
+          "bytes": 444928,
+          "sha256": "fe98acc96e6dd20a3ed811bd1c215c83440386d4f8b919a1d49f29abb748d44c"
         }
       ],
       "titles": {
@@ -948,10 +970,16 @@
       },
       "changes": {
         "es": [
-          "Filtros anticipados y lectura compartida de pools durante cada fotograma; conserva diseño y alcance."
+          "Apuntado bajo demanda y compartido; evita comprobaciones y formateo redundantes. Corrige ancho de etiquetas al cambiar tamaño. Diseño y animaciones conservados."
         ],
         "en": [
-          "Private performance candidate; behavior and appearance preserved."
+          "On-demand shared aiming, redundant checks and formatting removed; fixes stale label widths. Appearance and animations preserved."
+        ],
+        "pt": [
+          "Mira sob demanda e compartilhada; remove verificações e formatação redundantes e corrige larguras antigas. Visual e animações preservados."
+        ],
+        "ru": [
+          "Оптимизация запросов и подписей расстояния; внешний вид и анимации сохранены."
         ]
       },
       "locales": {
@@ -1355,7 +1383,7 @@
     },
     {
       "id": "custom-radar",
-      "version": "1.0.23",
+      "version": "1.0.24",
       "name": "Tablet Radar",
       "type": "asi",
       "categories": [
@@ -1386,9 +1414,9 @@
       "files": [
         {
           "path": "Jose_custom_radar.asi",
-          "source": "packages/custom-radar/1.0.23/Jose_custom_radar.asi",
-          "bytes": 1131008,
-          "sha256": "e61971d383ec804e67c711a93f92313d8e82120bc2adc29ab898ce015217a86a"
+          "source": "packages/custom-radar/1.0.24/Jose_custom_radar.asi",
+          "bytes": 1134592,
+          "sha256": "72919d6ad19c61f69a6e3ec0c73c1e32baedee988261cde9446900148e38e54e"
         }
       ],
       "titles": {
@@ -1400,19 +1428,23 @@
         "es": [
           "Tablet Radar: iconos de vehículos y contorno de blip igualados al radar GTA V, ajuste independiente para checkpoint y blip, renombrado a \"Tamaño de tablet\" y configuración inicial por defecto actualizada.",
           "Menos calculos repetidos al proyectar mapa, iconos y rutas. Conserva el diseno y los ajustes. GPS compartido calculado fuera del juego con HUD Remake actualizado.",
-          "Consolidacion privada: distingue el binario optimizado de otra entrega que tambien se etiqueto 1.0.22. Sin cambios funcionales adicionales."
+          "Consolidacion privada: distingue el binario optimizado de otra entrega que tambien se etiqueto 1.0.22. Sin cambios funcionales adicionales.",
+          "Objetivos Lua/misiones, checkpoints y jugadores del snapshot compartido GTA V; modo historia corregido; conserva personalizaciones. Requiere host privado actualizado."
         ],
         "en": [
           "Tablet Radar: vehicle icons and blip contours matched to GTA V radar, independent slider for checkpoint and blip, renamed to \"Tablet size\", and updated initial default configuration.",
-          "Fewer repeated calculations when projecting map, icons and routes. Preserves layout and settings. Shared GPS computed outside the game with the updated HUD Remake."
+          "Fewer repeated calculations when projecting map, icons and routes. Preserves layout and settings. Shared GPS computed outside the game with the updated HUD Remake.",
+          "Shared GTA V snapshot for Lua/mission targets, checkpoints and players; story-mode visibility fixed; custom settings preserved. Requires updated private host."
         ],
         "pt": [
           "Tablet Radar: ícones de veículos e contorno de blips igualados ao radar GTA V, ajuste independente para checkpoint e blip, renomeado para \"Tamanho do tablet\" e configuração inicial padrão atualizada.",
-          "Menos calculos repetidos ao projetar mapa, icones e rotas. Preserva desenho e ajustes. GPS compartilhado calculado fora do jogo com o HUD Remake atualizado."
+          "Menos calculos repetidos ao projetar mapa, icones e rotas. Preserva desenho e ajustes. GPS compartilhado calculado fora do jogo com o HUD Remake atualizado.",
+          "Snapshot GTA V compartilhado para objetivos Lua/missoes, checkpoints e jogadores; modo historia corrigido; ajustes preservados. Requer host privado atualizado."
         ],
         "ru": [
           "Планшетный радар: значки транспорта и контур меток согласованы с радаром GTA V, независимая настройка для чекпоинтов и меток, переименовано в «Размер планшета» и обновлены настройки по умолчанию.",
-          "Меньше повторных вычислений карты, значков и маршрутов. Дизайн и настройки сохранены. Общий GPS вычисляется вне игры с обновлённым HUD Remake."
+          "Меньше повторных вычислений карты, значков и маршрутов. Дизайн и настройки сохранены. Общий GPS вычисляется вне игры с обновлённым HUD Remake.",
+          "Общие данные GTA V для целей Lua/миссий, чекпоинтов и игроков; исправлен сюжетный режим; настройки сохранены. Требуется обновлённый приватный хост."
         ]
       },
       "previews": [
@@ -1892,7 +1924,7 @@
     },
     {
       "id": "chat-remake",
-      "version": "1.0.8",
+      "version": "1.0.16",
       "name": "Chat Remake",
       "titles": {
         "es": "Chat Remake",
@@ -1911,15 +1943,43 @@
       },
       "changes": {
         "es": [
+          "Guardado de configuracion fuera del hilo del juego, con coalescing y drenaje del ultimo cambio al descargar; preserva el ultimo archivo valido ante errores y reduce trabajo repetido del historial.",
+          "Reduce consultas repetidas de configuracion y trabajo de macros/filas ocultas; protege la tecla de consola al escribir sin perder ñ/Ñ. Ambos chats conservan sus fades y cache por ID.",
+          "Corrige rechazo de backbuffers RGB 1555 de 16 bits y otros formatos RGB; conserva colores, captura nativa y renderizado.",
+          "Captura el backbuffer presentado aunque otro mod deje un render target temporal; confirma el PNG guardado y muestra errores de captura o archivo.",
+          "Optimiza contador de caracteres sin conversión Win32 por frame, tema/accent solo ante cambios de configuración y tick/notificaciones sin búsquedas JSON redundantes en reposo; F8 nativo y captura reforzados.",
+          "Corrige F8 nativo y refuerza la captura personalizada; comparte movimiento/apuntado y conserva menus contextuales fuera del visor.",
+          "Reutiliza alfa y color de sombra; conserva el contorno de ocho direcciones y la codificación.",
           "Optimizaciones profundas de rendimiento, frametime y memoria; barrido condicional de macros y filtrado eficiente."
         ],
         "pt": [
+          "Salva configuracao fora da thread do jogo, agrupa edicoes e conclui a ultima ao descarregar; preserva o arquivo valido em erros e reduz trabalho repetido no historico.",
+          "Reduz consultas de configuracao e trabalho ocioso de macros/linhas; protege a tecla de console ao escrever sem perder ñ/Ñ. Preserva ambos os chats e transicoes.",
+          "Corrige rejeicao de backbuffers RGB 1555 de 16 bits e outros formatos RGB; preserva cores, captura nativa e renderizacao.",
+          "Captura o backbuffer apresentado mesmo com render targets temporarios; confirma PNG salvo e informa erros de captura ou arquivo.",
+          "Otimiza contador de caracteres sem conversão Win32 por frame, tema/accent apenas em mudanças de configuração e tick/notifs sem consultas JSON ociosas; F8 nativo e captura reforçados.",
+          "Corrige F8 nativo e reforca a captura personalizada; compartilha movimento/mira e preserva menus fora da area visivel.",
+          "Reutiliza a cor da sombra e a opacidade, preservando o contorno e a codificação.",
           "Otimizações profundas de desempenho, frametime e memória; varredura condicional de macros e filtragem eficiente."
         ],
         "en": [
+          "Moves configuration saving off the game thread, coalesces pending edits and drains the final change on unload; preserves the last valid file on errors and reduces repeated history work.",
+          "Reduces repeated settings queries and idle macro/row work; protects the console key while typing without losing ñ/Ñ. Both chats retain fades and ID-keyed caching.",
+          "Fixes rejection of 16-bit RGB 1555 and other packed RGB backbuffers; preserves colours, native screenshots and rendering.",
+          "Captures the presented backbuffer despite temporary render targets; confirms saved PNG files and reports capture or file errors.",
+          "Optimizes char counter without per-frame Win32 conversions, theme/accent only on config change, and tick/notifs without redundant idle JSON queries; native F8 and capture hardened.",
+          "Fixes native F8 and hardens custom capture; shares movement/aim samples and preserves offscreen context menus.",
+          "Reuses shadow colour and opacity, preserving the eight-direction outline and encoding.",
           "Deep performance, frametime and memory optimizations; conditional macro polling and efficient filtering."
         ],
         "ru": [
+          "Фоновое сохранение настроек, объединение правок и завершение последней при выгрузке; сохранение исправного файла при ошибках и оптимизация истории.",
+          "Кэш настроек и сокращение холостой работы макросов/строк; защита клавиши консоли при вводе ñ/Ñ, сохранение обоих чатов и анимаций.",
+          "Поддержка 16-битных RGB 1555 и других RGB backbuffer; сохранение цветов, штатных снимков и отрисовки.",
+          "Снимок выводимого backbuffer независимо от временных render target; подтверждение сохранения PNG и сообщения об ошибках.",
+          "Оптимизация счетчика символов без покадровой Win32-конверсии, применение темы/accent только при смене настроек и tick/уведомления без холостого поиска JSON; F8 и снимки усилены.",
+          "Исправление штатной F8 и пользовательских снимков; общий опрос движения и прицеливания, сохранение контекстных меню.",
+          "Повторное использование цвета тени; контур и кодировка сохранены.",
           "Глубокая оптимизация производительности, фреймтайма и памяти; условный опрос макросов и эффективная фильтрация."
         ]
       },
@@ -1927,9 +1987,9 @@
       "files": [
         {
           "path": "Jose_chat_remake.asi",
-          "source": "packages/chat-remake/1.0.8/Jose_chat_remake.asi",
-          "bytes": 4443136,
-          "sha256": "98d4508e4b806f7e4776d6e6a41005896f1c70ceabde174927c9a03717b2a709"
+          "source": "packages/chat-remake/1.0.16/Jose_chat_remake.asi",
+          "bytes": 4474368,
+          "sha256": "848616a3a52e21657f83d02c3648c1c18f64cd53d071270be9574342337adb68"
         }
       ],
       "locales": {
