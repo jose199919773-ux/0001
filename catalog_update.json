@@ -1735,9 +1735,9 @@
           "pt": "Efeh Web"
         },
         "summary": {
-          "es": "Navegador web en un proceso externo",
-          "en": "Web browser in a separate process",
-          "pt": "Navegador web em processo separado"
+          "es": "Navegador web integrado",
+          "en": "Integrated web browser",
+          "pt": "Navegador web integrado"
         }
       },
       "description": {
@@ -1749,7 +1749,7 @@
         "ru": {
           "name": "Efeh Web",
           "title": "Efeh Web",
-          "summary": "Веб-браузер в отдельном процессе",
+          "summary": "Встроенный веб-браузер",
           "description": "Просматривайте интернет прямо с планшета, не выходя из игры. Открывайте гайды, сайты и веб-контент во время игры."
         }
       },
