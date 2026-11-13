@@ -1181,9 +1181,9 @@
         "groupIcon": ""
       },
       "description": {
-        "es": "Muestra un texto o apodo personalizado en pantalla con las fuentes de GTA. Puedes cambiar lo que dice, moverlo de lugar y ajustar su tamaño, color y contorno a tu gusto.",
-        "en": "Displays custom text or a nickname on screen using GTA SA fonts. Customize the text, move its position, and adjust size, colors, and outline.",
-        "pt": "Exibe um texto ou apelido personalizado na tela com as fontes do GTA. Você pode alterar o texto, reposicioná-lo e ajustar tamanho, cor e contorno."
+        "es": "Muestra un texto o apodo personalizado en pantalla con tipografías de GTA. Posición, color, tamaño y borde ajustables.",
+        "en": "Displays custom text or nickname on screen with GTA fonts. Adjustable position, color, size and outline.",
+        "pt": "Exibe texto ou apelido personalizado na tela com fontes do GTA. Posição, cor, tamanho e contorno ajustáveis."
       },
       "dependencies": [],
       "files": [
@@ -1862,9 +1862,9 @@
       ],
       "entry": "Jose_ambient_life.asi",
       "description": {
-        "es": "Añade mariposas, insectos, hojas al viento o plumas flotando a tu alrededor para darle más vida al entorno.",
-        "en": "Adds animated butterflies, insects, falling leaves, or floating feathers around you to bring the world to life.",
-        "pt": "Adiciona borboletas, insetos, folhas ao vento ou penas flutuando ao seu redor para dar mais vida ao cenário."
+        "es": "Añade mariposas, insectos, hojas y plumas flotando alrededor del personaje.",
+        "en": "Adds animated butterflies, insects, falling leaves, or floating feathers around player.",
+        "pt": "Adiciona borboletas, insetos, folhas ou penas flutuando ao redor do personagem."
       },
       "changes": {
         "es": [
@@ -2026,9 +2026,9 @@
       ],
       "entry": "Jose_pause_menu.asi",
       "description": {
-        "es": "Menú de pausa personalizable con un diseño renovado.",
-        "en": "Customizable pause menu with a refreshed design.",
-        "pt": "Menu de pausa personalizável com um visual renovado."
+        "es": "Reemplaza el menú de pausa original con un diseño moderno y accesible.",
+        "en": "Replaces original pause menu with a modern and accessible layout.",
+        "pt": "Substitui o menu de pausa original por um visual moderno e acessível."
       },
       "changes": {
         "es": [
