@@ -3,10 +3,10 @@
   "name": "José Store",
   "bridge": {
     "protocol": 1,
-    "version": "1.0.4",
+    "version": "1.0.5",
     "source": "bridge/JoseStore.lua",
-    "bytes": 8816,
-    "sha256": "a89f3f58b4123dc390cbedfc8cc81710a372d9a85dad54195b0ea53854957851"
+    "bytes": 9329,
+    "sha256": "4aca4d25a418e7b069ccf0ceb6e350defc60097ae0ce81085c393875a5fd6d72"
   },
   "mods": [
     {
