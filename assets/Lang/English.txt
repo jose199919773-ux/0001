@@ -1110,7 +1110,7 @@
   "tablet.click_trigger_pair": "Click triggers",
   "tablet.trigger_pair_56": "L2/R2: buttons 5 / 6",
   "tablet.trigger_pair_78": "L2/R2: buttons 7 / 8",
-  "tablet.config_app": "Config",
+  "tablet.config_app": "Settings",
   "tablet.config_title": "Settings",
   "tablet.keyboard_shortcuts": "Keyboard shortcuts",
   "tablet.shortcuts_hint": "Choose a key to open each app.",

@@ -50,7 +50,7 @@
     {
       "id": "halo-hitmarker",
       "name": "Marcador de impactos (hitmarker)",
-      "version": "1.0.12",
+      "version": "1.0.18",
       "type": "asi",
       "categories": [
         "mod"
@@ -81,13 +81,13 @@
       "files": [
         {
           "path": "Jose_hitmarker.asi",
-          "source": "packages/halo-hitmarker/1.0.12/Jose_hitmarker.asi",
-          "bytes": 330240,
-          "sha256": "85ba82fce7103bcabf68b17cdcefd3ac6dcf09d0bcc867b88b31071b1d0bd815"
+          "source": "packages/halo-hitmarker/1.0.18/Jose_hitmarker.asi",
+          "bytes": 334336,
+          "sha256": "d8e3ad8c945d14f586fba2e98f93d2f928939b66d511464fa78d4d884eb63de5"
         },
         {
           "path": "hitmarker.mp3",
-          "source": "packages/halo-hitmarker/1.0.12/hitmarker.mp3",
+          "source": "packages/halo-hitmarker/1.0.18/hitmarker.mp3",
           "bytes": 2022,
           "sha256": "49ef753bbfb8ad572a5768f445fbd84c7df2c94fcfe03aaa9c9eac5f2aa48cde"
         }
@@ -99,16 +99,32 @@
       },
       "changes": {
         "es": [
-          "Se añadió un sonido al Hitmarker al eliminar a un jugador."
+          "Se añadió un sonido al Hitmarker al eliminar a un jugador.",
+          "Variante Halo Infinite seleccionable, brillo ajustable y estilo clasico conservado.",
+          "Opciones ordenadas por variante y funcion; los ajustes sin efecto se ocultan sin perder sus valores.",
+          "Restaurado el aviso de dano sin posicion del atacante y con respaldo de vida/chaleco; salidas suaves y nombres de ajustes simplificados.",
+          "Halo Infinite: centro luminoso abierto y cuatro trazos afinados con brillo que se desvanece, ajustados a los videos de referencia."
         ],
         "en": [
-          "Added a Hitmarker sound when eliminating a player."
+          "Added a Hitmarker sound when eliminating a player.",
+          "Selectable Halo Infinite variant with adjustable glow; classic style preserved.",
+          "Settings grouped by variant and purpose; irrelevant controls are hidden without losing saved values.",
+          "Damage feedback retained without an attacker position, with health/armour fallback; smooth exits and simpler setting labels.",
+          "Halo Infinite: open luminous center and four tapered fading streaks matched to the reference clips."
         ],
         "pt": [
-          "Adicionado um som ao Hitmarker ao eliminar um jogador."
+          "Adicionado um som ao Hitmarker ao eliminar um jogador.",
+          "Variante Halo Infinite selecionavel com brilho ajustavel; estilo classico preservado.",
+          "Opcoes organizadas por variante e funcao; ajustes sem efeito ficam ocultos sem perder seus valores.",
+          "Aviso de dano preservado sem posicao do atacante, com respaldo de vida/colete; saidas suaves e nomes de ajustes simplificados.",
+          "Halo Infinite: centro luminoso aberto e quatro tracos afinados com brilho suave, ajustados aos videos."
         ],
         "ru": [
-          "Добавлен звук Hitmarker при убийстве игрока."
+          "Добавлен звук Hitmarker при убийстве игрока.",
+          "Добавлен стиль Halo Infinite с настройкой свечения; классический стиль сохранён.",
+          "Настройки сгруппированы по стилю и назначению; неиспользуемые параметры скрыты, их значения сохраняются.",
+          "Сохранено предупреждение об уроне без позиции атакующего, добавлен резерв по здоровью и броне; плавное исчезновение и короткие названия настроек.",
+          "Halo Infinite: светящийся открытый центр и четыре тонких затухающих луча по видеопримерам."
         ]
       },
       "locales": {
@@ -217,7 +233,7 @@
     {
       "id": "damage-indicators",
       "name": "Indicadores de daño",
-      "version": "1.0.7",
+      "version": "1.0.16",
       "type": "asi",
       "categories": [
         "mod"
@@ -249,9 +265,9 @@
       "files": [
         {
           "path": "Jose_damage_indicators.asi",
-          "source": "packages/damage-indicators/1.0.7/Jose_damage_indicators.asi",
-          "bytes": 36864,
-          "sha256": "04baa47287871f0af0c674f0baddb52775feeb0af701a7a8a80d2ab5e76fd8e3"
+          "source": "packages/damage-indicators/1.0.16/Jose_damage_indicators.asi",
+          "bytes": 361984,
+          "sha256": "963ade1bdf2b0a48e4e5f42b08783906c923ab2283c65708a92db9f72cdab525"
         }
       ],
       "titles": {
@@ -261,16 +277,20 @@
       },
       "changes": {
         "es": [
-          "Configuraciones iniciales tomadas de los ajustes guardados para los 23 módulos; los archivos válidos existentes se conservan."
+          "Arco rojo corregido al girar la camara, apuntar y conducir en historia y SA-MP. Detecta agresores en vehiculos y conserva los impactos recientes en rafagas.",
+          "Halo Infinite: borde rojo definido, degradado interior suave y entrada rapida del indicador, ajustados a los videos de referencia."
         ],
         "en": [
-          "Initial settings captured from the saved preferences for all 23 modules; existing valid configuration files are preserved."
+          "Fixed red arc when rotating the camera, aiming and driving in story mode and SA-MP. Resolves vehicle attackers and keeps recent burst impacts.",
+          "Halo Infinite: crisp red lip, soft interior gradient and fast damage indicator onset matched to the reference clips."
         ],
         "pt": [
-          "Valores iniciais obtidos das configurações salvas dos 23 módulos; arquivos válidos existentes são preservados."
+          "Arco vermelho corrigido ao girar a camera, mirar e dirigir no modo historia e SA-MP. Detecta agressores em veiculos e preserva impactos recentes em rajadas.",
+          "Halo Infinite: borda vermelha definida, degradado interno suave e entrada rapida do indicador conforme os videos."
         ],
         "ru": [
-          "Начальные параметры взяты из сохранённых настроек всех 23 модулей. Существующие исправные конфигурации сохраняются."
+          "Исправлено направление красной дуги при повороте камеры, прицеливании и вождении в сюжетном режиме и SA-MP. Поддержаны атакующие в транспорте и новые попадания при очередях.",
+          "Halo Infinite: чёткий красный край, мягкий внутренний градиент и быстрое появление по видеопримерам."
         ]
       },
       "locales": {
@@ -614,7 +634,7 @@
     {
       "id": "ammo-hud",
       "name": "Ammo HUD",
-      "version": "1.0.8",
+      "version": "1.0.9",
       "type": "asi",
       "categories": [
         "mod"
@@ -637,7 +657,7 @@
         ]
       },
       "description": {
-        "es": "Ammo HUD: Zombie Army 4, Dead War, Prisma y Órbita; animaciones desactivables y modo fijo o solo recarga.",
+        "es": "Ammo HUD: Zombie Army 4, Triple cartucho, Barra de celdas y Anillo orbital; animaciones desactivables y modo fijo o solo recarga.",
         "en": "Circular ammunition and reload indicator with colors, fonts, particles and configurable icon. Requires updated Hud Remake.",
         "pt": "Indicador circular de munição e recarga com cores, fontes, partículas e ícone configurável. Requer Hud Remake atualizado."
       },
@@ -645,13 +665,13 @@
       "files": [
         {
           "path": "Jose_ammo_hud.asi",
-          "source": "packages/ammo-hud/1.0.8/Jose_ammo_hud.asi",
+          "source": "packages/ammo-hud/1.0.9/Jose_ammo_hud.asi",
           "bytes": 120832,
-          "sha256": "a044ea0d85df873534e3a4c67f47d3ae295e0ab0164177176dd1f1fe0e5330b1"
+          "sha256": "6c6de540e12d19aa1ae8f0e3b24a2aec539edf6bce9fb16801d6edc00ef34c8b"
         },
         {
           "path": "assets/ammo.png",
-          "source": "packages/ammo-hud/1.0.8/assets/ammo.png",
+          "source": "packages/ammo-hud/1.0.9/assets/ammo.png",
           "bytes": 2309,
           "sha256": "45db0deaa765d8b16689584fbec35c94bf0aa6fd6eb3d451ddb3989d0b2c3491"
         }
@@ -1383,7 +1403,7 @@
     },
     {
       "id": "custom-radar",
-      "version": "1.0.24",
+      "version": "1.0.26",
       "name": "Tablet Radar",
       "type": "asi",
       "categories": [
@@ -1414,9 +1434,9 @@
       "files": [
         {
           "path": "Jose_custom_radar.asi",
-          "source": "packages/custom-radar/1.0.24/Jose_custom_radar.asi",
-          "bytes": 1134592,
-          "sha256": "72919d6ad19c61f69a6e3ec0c73c1e32baedee988261cde9446900148e38e54e"
+          "source": "packages/custom-radar/1.0.26/Jose_custom_radar.asi",
+          "bytes": 1248256,
+          "sha256": "a3ec0de163fc8cd8b1ac4f8287a3c2c23b3951d0386d37ecacbe9205f86fe818"
         }
       ],
       "titles": {
@@ -2139,7 +2159,7 @@
     },
     {
       "id": "skin-blood",
-      "version": "1.0.1",
+      "version": "1.0.3",
       "name": "Skin Blood",
       "type": "asi",
       "categories": [
@@ -2185,18 +2205,26 @@
       "dependencies": [],
       "changes": {
         "es": [
-          "Agrupa la búsqueda de personajes con gotas sin cambiar sangre, visibilidad o límites."
+          "Vista previa en vivo proyectada sobre el propio personaje en 3D; retiro de silueta sintética del menú y valores predeterminados ajustados.",
+          "Adaptación del contorno a la malla de la skin, goteo por gravedad sin pausa inicial y ajuste de grosor para modelos personalizados."
         ],
         "en": [
-          "Private performance candidate; behavior and appearance preserved."
+          "Live preview projected directly on the player's 3D character; removed menu stick mannequin and tuned defaults.",
+          "Mesh-based skin contour fitting, gravity-driven flow without the initial hold, and thickness adjustment for custom models."
+        ],
+        "pt": [
+          "Adaptação do contorno à malha da skin, gotas por gravidade sem pausa inicial e ajuste de espessura para modelos personalizados."
+        ],
+        "ru": [
+          "Подстройка контура по геометрии скина, движение капель под действием гравитации без начальной задержки и настройка толщины."
         ]
       },
       "files": [
         {
           "path": "Jose_skin_blood.asi",
-          "source": "packages/skin-blood/1.0.1/Jose_skin_blood.asi",
-          "bytes": 80896,
-          "sha256": "b76ddf9fae5e2fc517691adb87d39c6b2e543f1e850e3010a1c21a9767f596f5"
+          "source": "packages/skin-blood/1.0.3/Jose_skin_blood.asi",
+          "bytes": 453632,
+          "sha256": "29b192891ca7b026edaf0c7f8a792019ac103720d904f9353cb2d4d0b452bd99"
         }
       ],
       "previews": [
