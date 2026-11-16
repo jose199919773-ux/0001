@@ -2485,6 +2485,7 @@
   "tv.lcd": "LCD · SA-MP",
   "tv.size": "Tamanho",
   "tv.fps": "Fluidez do vídeo",
+  "tv.tuning_hint": "Maior qualidade usa mais dados de rede. Escolher 30 FPS alivia o processador e roda melhor em PCs mais fracos.",
   "tv.model_missing": "Modelo indisponível. Os LCDs exigem SA-MP 0.3.7 ou posterior.",
   "tv.client_failed": "Não foi possível carregar a TV. Confira o modelo e entre novamente de forma manual.",
   "tv.waiting_screen": "Aguardando transmissão",

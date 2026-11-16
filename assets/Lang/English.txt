@@ -2485,6 +2485,7 @@
   "tv.lcd": "LCD · SA-MP",
   "tv.size": "Size",
   "tv.fps": "Video frame rate",
+  "tv.tuning_hint": "Higher quality uses more network bandwidth. Choosing 30 FPS saves CPU usage and runs better on low-end PCs.",
   "tv.model_missing": "This model is unavailable. LCDs require SA-MP 0.3.7 or later.",
   "tv.client_failed": "Could not load the TV. Check the model and join again manually.",
   "tv.waiting_screen": "Waiting for broadcast",
