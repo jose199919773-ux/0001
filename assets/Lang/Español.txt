@@ -962,6 +962,7 @@
   "tablet.limpar_cache": "Limpiar caché",
   "tablet.restaurar_padroes": "Restaurar valores",
   "tablet.cache_limpo_com_sucesso": "¡Caché limpiada!",
+  "tablet.desfoque_de_fundo_da_tablet": "Desenfoque de fondo detrás de la tablet",
   "tablet.lembrar_configuracoes_nas_proximas_sessoes": "Recordar ajustes en las próximas sesiones",
   "tablet.salvo_em_efeh_hud_remake_tablet_ini": "Guardado en Efeh/Hud_Remake/Tablet.ini",
   "tablet.home": "Inicio",

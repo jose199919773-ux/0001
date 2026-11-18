@@ -963,6 +963,7 @@
   "tablet.limpar_cache": "Clear cache",
   "tablet.restaurar_padroes": "Restore defaults",
   "tablet.cache_limpo_com_sucesso": "Cache cleared!",
+  "tablet.desfoque_de_fundo_da_tablet": "Background blur behind tablet",
   "tablet.lembrar_configuracoes_nas_proximas_sessoes": "Remember settings for future sessions",
   "tablet.salvo_em_efeh_hud_remake_tablet_ini": "Saved in Efeh/Hud_Remake/Tablet.ini",
   "tablet.home": "Home",
