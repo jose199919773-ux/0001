@@ -898,6 +898,8 @@
   "maps.catalog_loading": "Carregando catálogo...",
   "maps.catalog_available": "mapa(s) disponível(is)",
   "maps.catalog_downloading": "Baixando mapas...",
+  "maps.catalog_saving": "Verificando e salvando o mapa...",
+  "maps.catalog_applying": "Aplicando o mapa...",
   "maps.catalog_manifest": "Baixando manifesto...",
   "maps.catalog_installed_ok": "Mapa instalado com sucesso.",
   "maps.catalog_up_to_date": "Este mapa já está instalado e atualizado.",

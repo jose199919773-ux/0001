@@ -899,6 +899,8 @@
   "maps.catalog_loading": "Checking catalog...",
   "maps.catalog_available": "map(s) available",
   "maps.catalog_downloading": "Downloading maps",
+  "maps.catalog_saving": "Verifying and saving the map...",
+  "maps.catalog_applying": "Applying the map...",
   "maps.catalog_manifest": "Downloading manifest...",
   "maps.catalog_installed_ok": "Map installed successfully.",
   "maps.catalog_up_to_date": "This map is already installed and up to date.",
